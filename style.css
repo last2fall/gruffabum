@@ -135,15 +135,35 @@ h1 {
     text-shadow: 0 0 15px #ff4444 !important;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
     #game {
-        padding: 20px;
-        margin: 10px;
+        padding: 15px;
     }
     
     h1 {
         font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    
+    #status, #timer {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+    
+    #target {
+        font-size: 1.2em;
+        margin: 15px 0;
+        letter-spacing: 2px;
+    }
+    
+    #grid-container {
+        margin: 20px 0;
+        padding: 10px;
     }
     
     #grid {
@@ -160,5 +180,75 @@ h1 {
     .targetBox {
         width: 35px;
         height: 35px;
+    }
+    
+    #instructions {
+        font-size: 0.8em;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    #game {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+    
+    #status, #timer {
+        font-size: 0.9em;
+        margin: 8px 0;
+    }
+    
+    #target {
+        font-size: 1em;
+        margin: 12px 0;
+        letter-spacing: 1px;
+    }
+    
+    #grid-container {
+        margin: 15px 0;
+        padding: 8px;
+    }
+    
+    #grid {
+        grid-template-columns: repeat(10, 28px);
+        gap: 4px;
+    }
+    
+    .cell {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+    
+    .targetBox {
+        width: 28px;
+        height: 28px;
+    }
+    
+    #instructions {
+        font-size: 0.7em;
+        margin-top: 10px;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+    .cell:hover {
+        text-shadow: 0 0 5px #00ff41;
+    }
+    
+    .cell:active {
+        text-shadow: 0 0 10px #00ff41;
+        transform: scale(0.95);
     }
 }
