@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a1a0a;
+    color: #00ff41;
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+#game {
+    text-align: center;
+    background: transparent;
+    padding: 30px;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    color: #00ff41;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00ff41;
+}
+
+#status {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 15px 0;
+    color: #00ff41;
+    letter-spacing: 1px;
+}
+
+#target {
+    font-size: 1.5em;
+    color: #00ff41;
+    margin: 20px 0;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px #00ff41;
+}
+
+#timer {
+    color: #00ff41;
+    font-size: 1.1em;
+    margin: 15px 0;
+    letter-spacing: 1px;
+}
+
+#grid-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    position: relative;
+    border: 2px solid #00ff41;
+    padding: 15px;
+    background: rgba(0, 20, 0, 0.3);
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 45px);
+    gap: 8px;
+    position: relative;
+    padding: 0;
+}
+
+.cell {
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    background: transparent;
+    color: #00ff41;
+    font-family: 'Courier Prime', monospace;
+    letter-spacing: 0px;
+    transition: all 0.1s ease;
+}
+
+.cell:hover {
+    text-shadow: 0 0 5px #00ff41;
+}
+
+.cell.highlighted {
+    text-shadow: 0 0 8px #00ff41 !important;
+}
+
+.targetBox {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #00ff41;
+    background: transparent;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+#instructions {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #00aa33;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+#instructions p {
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+/* Success/Failure states */
+.success {
+    color: #00ff41 !important;
+    text-shadow: 0 0 15px #00ff41 !important;
+}
+
+.failure {
+    color: #ff4444 !important;
+    text-shadow: 0 0 15px #ff4444 !important;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    #game {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.4em;
+    }
+    
+    #grid {
+        grid-template-columns: repeat(10, 35px);
+        gap: 6px;
+    }
+    
+    .cell {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+    
+    .targetBox {
+        width: 35px;
+        height: 35px;
+    }
+}
